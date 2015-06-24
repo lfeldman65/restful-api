@@ -5,6 +5,7 @@
 //  Created by Larry Feldman on 6/24/15.
 //  Copyright (c) 2015 Larry Feldman. All rights reserved.
 //
+//  StrikeIron Email Verification plus Hygiene
 
 #import "ViewController.h"
 
