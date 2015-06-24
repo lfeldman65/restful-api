@@ -10,15 +10,18 @@
 #import "ViewController.h"
 
 #define kStrikeIronUserID   @"lfeldman65@gmail.com"
-#define kStrikeIronPassword @"password"
+//#define kStrikeIronPassword @"password"
 
 @interface ViewController ()
 
 - (IBAction)verifyEmail:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *emailAddress;
+@property (weak, nonatomic) IBOutlet UITextField *myPassword;
+
 @property (weak, nonatomic) IBOutlet UILabel *verificationResults;
 @property (copy, nonatomic) NSString *enteredEmailAddress;
+@property (copy, nonatomic) NSString *enteredPW;
 @property (retain, nonatomic) NSMutableData *apiReturnXMLData;
 @property NSURLConnection *currentConnection;
 @property NSXMLParser *xmlParser;
@@ -53,11 +56,14 @@
     // store the value of the email address Text Field
     self.enteredEmailAddress = self.emailAddress.text;
     
+    // store the value of the password
+    self.enteredPW = self.myPassword.text;
+    
     // Clear out the return message label
     self.verificationResults.text = @"";
     
     // Create the REST call string.
-    NSString *restCallString = [NSString stringWithFormat:@"http://ws.strikeiron.com/StrikeIron/EMV6Hygiene/VerifyEmail?LicenseInfo.RegisteredUser.UserID=%@&LicenseInfo.RegisteredUser.Password=%@&VerifyEmail.Email=%@&VerifyEmail.Timeout=30", kStrikeIronUserID, kStrikeIronPassword, self.enteredEmailAddress ];
+    NSString *restCallString = [NSString stringWithFormat:@"http://ws.strikeiron.com/StrikeIron/EMV6Hygiene/VerifyEmail?LicenseInfo.RegisteredUser.UserID=%@&LicenseInfo.RegisteredUser.Password=%@&VerifyEmail.Email=%@&VerifyEmail.Timeout=30", kStrikeIronUserID, self.enteredPW, self.enteredEmailAddress ];
     
     // Create the URL to make the rest call.
     NSURL *restURL = [NSURL URLWithString:restCallString];
@@ -106,11 +112,11 @@
     // create our XML parser with the return data from the connection
     self.xmlParser = [[NSXMLParser alloc] initWithData:self.apiReturnXMLData];
     
-    // setup the delgate (see methods below)
+    // setup the delegate (see methods below)
     
     [self.xmlParser setDelegate:self];
     
-    // start parsing. The delgate methods will be called as it is iterating through the file.
+    // start parsing. The delegate methods will be called as it is iterating through the file.
     [self. xmlParser parse];
     
     self.currentConnection = nil;

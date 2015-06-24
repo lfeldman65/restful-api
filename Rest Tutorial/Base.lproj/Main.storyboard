@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5r-rL-MRD"/>
+                        <viewControllerLayoutGuide type="bottom" id="tN1-4C-fC4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter email address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h80-Uo-Z0X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter email address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h80-Uo-Z0X">
                                 <rect key="frame" x="16" y="30" width="184" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="l2P-qY-O1q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@domain.com" minimumFontSize="17" id="Kcd-Ev-5JE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ha-HB-7MQ">
+                                <rect key="frame" x="16" y="254" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="h0T-qK-aRW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@domain.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kcd-Ev-5JE">
                                 <rect key="frame" x="16" y="65" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Yca-ym-Uf0"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f8Z-qe-FoF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Z-qe-FoF">
                                 <rect key="frame" x="112" y="504" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,18 +52,36 @@
                                     <action selector="verifyEmail:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IUc-lj-0IO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ha-HB-7MQ">
-                                <rect key="frame" x="16" y="120" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-IN-jqC">
+                                <rect key="frame" x="16" y="127" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Jo9-ON-MiZ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a1g-IN-jqC" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="44z-s4-EBA"/>
+                            <constraint firstItem="8Ha-HB-7MQ" firstAttribute="top" secondItem="a1g-IN-jqC" secondAttribute="bottom" constant="97" id="B7N-c8-3ID"/>
+                            <constraint firstItem="Kcd-Ev-5JE" firstAttribute="top" secondItem="h80-Uo-Z0X" secondAttribute="bottom" constant="14" id="JHt-8p-Yhy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f8Z-qe-FoF" secondAttribute="trailing" constant="97" id="MiH-tk-ho4"/>
+                            <constraint firstItem="8Ha-HB-7MQ" firstAttribute="trailing" secondItem="a1g-IN-jqC" secondAttribute="trailing" id="WuI-VC-5Us"/>
+                            <constraint firstItem="tN1-4C-fC4" firstAttribute="top" secondItem="f8Z-qe-FoF" secondAttribute="bottom" constant="34" id="ZPm-qH-vQ6"/>
+                            <constraint firstItem="h80-Uo-Z0X" firstAttribute="top" secondItem="n5r-rL-MRD" secondAttribute="bottom" constant="10" id="c7l-bK-CZu"/>
+                            <constraint firstItem="Kcd-Ev-5JE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fna-Ee-Csw"/>
+                            <constraint firstItem="a1g-IN-jqC" firstAttribute="trailing" secondItem="Kcd-Ev-5JE" secondAttribute="trailing" id="g1m-wR-G4K"/>
+                            <constraint firstItem="f8Z-qe-FoF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="96" id="iQL-X9-8V9"/>
+                            <constraint firstItem="Kcd-Ev-5JE" firstAttribute="leading" secondItem="a1g-IN-jqC" secondAttribute="leading" id="mUU-GG-ujJ"/>
+                            <constraint firstItem="Kcd-Ev-5JE" firstAttribute="leading" secondItem="h80-Uo-Z0X" secondAttribute="leading" id="rWZ-L9-VQv"/>
+                            <constraint firstItem="a1g-IN-jqC" firstAttribute="top" secondItem="Kcd-Ev-5JE" secondAttribute="bottom" constant="32" id="vCg-6E-PmH"/>
+                            <constraint firstItem="8Ha-HB-7MQ" firstAttribute="leading" secondItem="a1g-IN-jqC" secondAttribute="leading" id="wgG-9m-GFd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailAddress" destination="Kcd-Ev-5JE" id="sKs-2O-WEF"/>
+                        <outlet property="myPassword" destination="a1g-IN-jqC" id="2fM-Yw-p0E"/>
                         <outlet property="verificationResults" destination="8Ha-HB-7MQ" id="r20-2k-hVD"/>
                     </connections>
                 </viewController>
